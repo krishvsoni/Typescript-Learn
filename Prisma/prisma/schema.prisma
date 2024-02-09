@@ -33,3 +33,13 @@ model Roles {
   role_2     String  
   role_3     String  
 }
+
+
+model Book {
+  title         String
+  productId     String
+  publishedDate DateTime
+  description   String    @db.VarChar(150)
+
+  @@id([title, productId], name: "titleProduct")
+}
